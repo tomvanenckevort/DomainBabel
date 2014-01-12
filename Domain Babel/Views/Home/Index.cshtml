@@ -1,0 +1,81 @@
+﻿@model HomeModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@section Header
+{
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <div class="lg-header">
+                <h1 class="hide">Domain Babel</h1>
+                <a href="/" class="logo">&nbsp;</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h2 class="md-header">What does your domain name say?</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form>
+            <div class="col-sm-12 text-center">
+                <div class="search-box">
+                    @Html.LabelFor(m => m.SearchText, "Domain name to search", new { @class = "hide" })
+                    <div class="input-group">
+                        @Html.TextBoxFor(m => m.SearchText, new { id = "txtSearch", @class = "form-control input-lg", placeholder = "mydomain.com" })
+                        <span class="input-group-btn">
+                            <button id="btnSearch" class="btn btn-lg" data-loading-text="Searching...">Search</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                @Html.ValidationMessageFor(m => m.SearchText, "", new { @class = "label label-warning" })
+
+            </div>
+        </form>
+    </div>
+    <div id="searchResults" class="row hide search-results" data-bind="fadeVisible: !hideResults(), attr: { 'aria-expanded': (hideResults() ? 'false' : 'true') }">
+        <div class="col-sm-12">
+            <h3 class="md-header text-center" data-bind="css: { 'hide': !searching() }">
+                <span data-bind="text: (languageCount() > 0 ? 'Searching through ' + languageCount() + ' languages' : 'Searching')"></span><span class="ellipsis" data-bind="text: ellipsis">...</span>
+            </h3>
+            <h3 class="hide md-header text-center" data-bind="text: searchResults().length + ' result' + (searchResults().length == 1 ? '' : 's') + ' found in ' + languageCount() + ' languages', css: { 'hide': searching() }"></h3>
+            <!-- ko foreach: { data: sortedSearchResults, afterAdd: showSearchResult } -->
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h4>
+                        <span class="label label-default" data-bind="text: $data.Part"></span>&nbsp;in&nbsp;<span data-bind="text: $data.Language"></span>&nbsp;means&nbsp;<span class="label label-default" data-bind="text: $data.Translation"></span>
+                    </h4>
+                </div>
+            </div>
+            <!-- /ko -->        
+        </div>
+    </div>
+}
+
+<div class="row intro">
+    <section class="col-sm-4">
+        <h3 class="md-header">Think you found your domain?</h3>
+        Coming up with a new, original and catchy domain name can be hard work, but is also very important.
+        <br />
+        <br />
+        So after a long search and much deliberation you have finally found your ideal domain name for your latest project, product or start-up.
+    </section>
+    <section class="col-sm-4">
+        <h3 class="md-header">But what does it say?</h3>
+        It might look good to you, but have you ever thought about what it might say in other languages?
+        <br />
+        <br />
+        It could contain words that you did not spot and maybe don't want to associate with your brand.
+    </section>
+    <section class="col-sm-4">
+        <h3 class="md-header">We can help!</h3>
+        Domain Babel checks your domain name against more than 40 languages and lets you know what words it might contain.
+        <br />
+        <br />
+        It finds any words of three characters or more that might be hidden in your domain name, and finds translations for them.
+    </section>
+</div>

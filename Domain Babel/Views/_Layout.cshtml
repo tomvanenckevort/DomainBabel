@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Domain Babel</title>
+        <meta name="description" content="Domain Babel compares and translates your domain against more than 40 languages and let's you know what words it might contain.">
+        <meta name="keywords" content="domain name, domain, domain names, translation, translates, meaning, language, languages">
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+        <link type="text/plain" rel="author" href="/humans.txt" />
+        <link type="text/css" rel="stylesheet" href="/Content/styles.css" />
+        <!--[if lt IE 9]>
+        <script src="/Scripts/scripts-legacy.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <header class="home-header container">
+            @RenderSection("Header")
+        </header>
+        <section class="container">
+            @RenderBody()                   
+        </section>
+        <footer class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <br />
+                    <small>&copy; 2013 Domain Babel</small>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            function DownloadResources() {
+                (function (i, s, o, g, a, m) {
+                    a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '/Scripts/scripts.js');
+
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-43097966-1', 'domainbabel.com');
+                ga('send', 'pageview');
+            }
+
+            if (window.addEventListener)
+                window.addEventListener("load", DownloadResources, false);
+            else if (window.attachEvent)
+                window.attachEvent("onload", DownloadResources);
+            else window.onload = DownloadResources;
+        </script>
+    </body>
+</html>

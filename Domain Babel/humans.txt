@@ -1,0 +1,12 @@
+﻿/* TEAM */
+	Developer: Tom van Enckevort
+	Contact: info [at] domainbabel.com
+	Twitter: 
+	From:Cardiff, United Kingdom
+		
+
+/* SITE */
+	Last update:2013/08/23
+	Language: English
+	Doctype:HTML5
+	IDE: Visual Studio 2012, Notepad++
