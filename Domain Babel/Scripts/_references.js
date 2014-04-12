@@ -1,4 +1,4 @@
-﻿/// <reference path="jquery-2.0.3.js" />
+﻿/// <reference path="jquery-2.1.0.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="domainbabel.js" />
 /// <reference path="jquery.signalR-2.0.0.js" />
